@@ -4,7 +4,6 @@ Chitter Challenge
 * Feel free to use Google, your notes, books, etc. but work on your own
 * If you refer to the solution of another coach or student, please put a link to that in your README
 * If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 10am Monday morning
 
 Challenge:
 -------
@@ -13,8 +12,8 @@ As usual please start by forking this repo.
 
 We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
 
-Features:
--------
+Features from original spec:
+--------------------------
 
 ```
 STRAIGHT UP
@@ -51,6 +50,55 @@ As a Maker
 So that I can stay constantly tapped in to the shouty box of Chitter
 I want to receive an email if I am tagged in a Peep
 ```
+
+My adapted spec:
+---------------
+
+As a user
+So that I can become registered at chitter
+I want to be able to sign-up
+
+As a user
+So that I can access my account at chitter
+I want to be able to log-in
+
+As a user
+So that my account is not used by anyone else
+I want to have password authentication
+
+As a user
+So that my account is not used by anyone else
+I want to be able to log-out.
+
+As a user
+So that I can inform friends of what I am doing
+I want to be able to post an update
+
+As a user
+So that my friends know when I posted
+I want my posts to include a time-stamp
+
+As a user
+So that I can stay up-to-date 
+I want to see all posts from myself and others
+
+As a user
+So that I can express my preferences
+I want to be able to like others posts
+
+As a user
+So that I can express my preferences
+I want to be able to unlike others posts
+
+
+As a user
+In case I make a mistake
+I want to be able to delete a post
+
+As a user
+In case I make a mistake
+I want to be able to edit a post
+
 
 Technical Approach:
 -----
