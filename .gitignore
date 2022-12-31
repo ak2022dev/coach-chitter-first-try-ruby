@@ -4,5 +4,6 @@
 # Local cache of Rubocop remote config
 .rubocop-*
 
-./ChitterLog*
+# LibreOffice notes
+/privatenotes
 
