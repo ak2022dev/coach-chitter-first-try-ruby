@@ -5,7 +5,7 @@ RSpec.describe "Chitter" do
   context "sign-up" do
     it("Allows a new user to sign-up") do
       chitter = Chitter.new
-      new_user = Chitter.sign_up("test@email.com", "password")
+      Chitter.sign_up("test@email.com", "password")
       expect(Chitter.get_users).to include("test@email.com" => "password")
     end
   end
