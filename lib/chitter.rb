@@ -20,4 +20,12 @@ class Chitter
     return @@users.include?(email)
   end
 
+  def self.log_in(email, password)
+    return self.user_exists(email) && self.validate_password(email, password)
+  end
+
+  def self.validate_password(email, password)
+    return @@users[email] == password
+  end
+
 end

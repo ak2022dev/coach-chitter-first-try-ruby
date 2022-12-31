@@ -14,4 +14,11 @@ RSpec.describe "Chitter" do
       expect { Chitter.sign_up("test@email.com", "password") }.to raise_error("User already exists")
     end
   end
+  context "log-in" do
+    it("Allows an existing user to log-in with correct password") do
+      chitter = Chitter.new
+      Chitter.sign_up("test@email.com", "password")
+      expect(Chitter.log_in("test@email.com", "password")).to be(true)
+    end
+  end
 end
