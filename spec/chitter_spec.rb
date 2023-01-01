@@ -19,6 +19,7 @@ RSpec.describe "Chitter" do
       chitter = Chitter.new
       Chitter.sign_up("test@email.com", "password")
       expect(Chitter.log_in("test@email.com", "password")).to be(true)
+      expect(Chitter.logged_in?("test@email.com")).to be(true)
     end
     it("Dis-allows an existing user to log-in with correct password") do
       chitter = Chitter.new
