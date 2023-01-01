@@ -14,7 +14,7 @@ RSpec.describe "Chitter" do
       expect { Chitter.sign_up("test@email.com", "password") }.to raise_error("User already exists")
     end
   end
-  context "log-in" do
+  context "log-in and log-out" do
     it("Allows an existing user to log-in with correct password") do
       chitter = Chitter.new
       Chitter.sign_up("test@email.com", "password")
@@ -30,6 +30,14 @@ RSpec.describe "Chitter" do
     it("Dis-allows non-registered user to log-in") do
       chitter = Chitter.new
       expect(Chitter.log_in("test@email.com", "password")).to be(false)
+      expect(Chitter.logged_in?("test@email.com")).to be(false)
+    end
+    it("Allows a logged-in user to log-out") do
+      chitter = Chitter.new
+      Chitter.sign_up("test@email.com", "password")
+      expect(Chitter.log_in("test@email.com", "password")).to be(true)
+      expect(Chitter.logged_in?("test@email.com")).to be(true)
+      Chitter.log_out("test@email.com")
       expect(Chitter.logged_in?("test@email.com")).to be(false)
     end
   end

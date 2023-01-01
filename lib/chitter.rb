@@ -43,5 +43,9 @@ class Chitter
   def self.logged_in?(email)
     return @@logged_in_users.include?(email)
   end
-  
+
+  def self.log_out(email)
+    @@logged_in_users.delete(email)
+  end
+
 end
