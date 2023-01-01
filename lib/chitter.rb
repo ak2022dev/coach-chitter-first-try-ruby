@@ -5,6 +5,11 @@ class Chitter
   def initialize
     @@all_users = {}
     @@logged_in_users = Set.new
+    @@all_posts = Set.new
+  end
+
+  def self.all_posts
+    return @@all_posts
   end
 
   def self.get_users
@@ -50,6 +55,10 @@ class Chitter
     else
       raise("Cannot log-out if not logged-in")
     end
+  end
+
+  def self.post(email, message)
+    @@all_posts.add(message)
   end
 
 end

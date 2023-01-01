@@ -47,4 +47,15 @@ RSpec.describe "Chitter" do
       expect{ Chitter.log_out("test@email.com") }.to raise_error("Cannot log-out if not logged-in")
     end
   end
+
+  context "posting a chit (message)" do
+    it("Allows a registered, logged-in user to make a post") do
+      chitter = Chitter.new
+      Chitter.sign_up("test@email.com", "password")
+      expect(Chitter.log_in("test@email.com", "password")).to be(true)
+      Chitter.post("test@email.com", "my post")
+      expect(Chitter.all_posts).to include("my post")
+    end
+  end
+
 end
