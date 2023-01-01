@@ -40,5 +40,11 @@ RSpec.describe "Chitter" do
       Chitter.log_out("test@email.com")
       expect(Chitter.logged_in?("test@email.com")).to be(false)
     end
+    it("Dis-allows log-out if user not logged-in") do
+      chitter = Chitter.new
+      Chitter.sign_up("test@email.com", "password")
+      expect(Chitter.logged_in?("test@email.com")).to be(false)
+      expect{ Chitter.log_out("test@email.com") }.to raise_error("Cannot log-out if not logged-in")
+    end
   end
 end

@@ -45,7 +45,11 @@ class Chitter
   end
 
   def self.log_out(email)
-    @@logged_in_users.delete(email)
+    if self.logged_in?(email)
+      @@logged_in_users.delete(email)
+    else
+      raise("Cannot log-out if not logged-in")
+    end
   end
 
 end
