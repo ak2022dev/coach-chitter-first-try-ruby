@@ -1,4 +1,5 @@
 # File: chitter_spec.rb
+
 require "chitter"
 
 RSpec.describe "Chitter" do
@@ -55,7 +56,7 @@ RSpec.describe "Chitter" do
       expect(Chitter.log_in("test@email.com", "password")).to be(true)
       Chitter.post("test@email.com", "my post")
       post = Post.new("test@email.com", "my post")
-      expect(Chitter.all_posts).to include( post )
+      expect(Chitter.all_posts).to include(post)
     end
   end
 
