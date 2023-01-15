@@ -54,7 +54,8 @@ RSpec.describe "Chitter" do
       Chitter.sign_up("test@email.com", "password")
       expect(Chitter.log_in("test@email.com", "password")).to be(true)
       Chitter.post("test@email.com", "my post")
-      expect(Chitter.all_posts).to include("my post")
+      post = Post.new("test@email.com", "my post")
+      expect(Chitter.all_posts).to include( post )
     end
   end
 

@@ -1,4 +1,6 @@
 require 'set'
+require_relative './post'
+
 
 class Chitter
 
@@ -69,8 +71,9 @@ class Chitter
 
 
   def self.post(email, message)
-    @@all_posts.add(message)
+    post = Post.new(email, message)
+    @@all_posts.add(post)
   end
 
-  
+
 end
