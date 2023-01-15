@@ -58,6 +58,17 @@ RSpec.describe "Chitter" do
       post = Post.new("test@email.com", "my post")
       expect(Chitter.all_posts).to include(post)
     end
+    it("Allows a registered, logged-in user to make more than one post") do
+      chitter = Chitter.new
+      Chitter.sign_up("test@email.com", "password")
+      expect(Chitter.log_in("test@email.com", "password")).to be(true)
+      Chitter.post("test@email.com", "my first post")
+      post1 = Post.new("test@email.com", "my first post")
+      expect(Chitter.all_posts).to include(post1)
+      Chitter.post("test@email.com", "my second post")
+      post2 = Post.new("test@email.com", "my second post")
+      expect(Chitter.all_posts).to include(post2)
+    end
   end
 
 end
