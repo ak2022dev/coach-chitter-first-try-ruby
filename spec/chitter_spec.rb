@@ -3,6 +3,7 @@
 require "chitter"
 
 RSpec.describe "Chitter" do
+
   context "sign-up" do
     it("Allows a new user to sign-up") do
       chitter = Chitter.new
@@ -15,6 +16,7 @@ RSpec.describe "Chitter" do
       expect { Chitter.sign_up("test@email.com", "password") }.to raise_error("User already exists")
     end
   end
+
   context "log-in and log-out" do
     it("Allows an existing user to log-in with correct password") do
       chitter = Chitter.new
